@@ -1,87 +1,257 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 
-*{
-    border: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body {
-    margin: 0;
-    font-family: "IBM Plex Sans", serif;
-  }
-
-  
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #ffffff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    
-  }
-
-  .logo img {
-  width: 50px;
-  height: 45px;
-  }
-
-  .menu {
-    display: none;
-    flex-direction: column;
-    background-color: #ffffff;
-    color:black;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 200px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  }
-
-  .menu a {
-    padding: 10px;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    display: block;
-  }
-
-  .menu a:hover {
-    background-color: #555;
-  }
-
-  .hamburger {
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-
-  
-  .menu.active {
-    display: flex;
-  }
-
-
-  @media (min-width: 768px) {
-    .menu {
-       color:black;             
-       display: flex;
-       position: static;
-       flex-direction: row;
-       height: auto;
-       padding: 30px 0;
-       background-color: transparent;
-       box-shadow: none;
-       justify-content: center;
-       margin:0 auto;
-       gap: 60px;
+    *{
+        border: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        font-family: "IBM Plex Sans", serif;
     }
 
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        
+    }
+
+    .logo img {
+    width: 50px;
+    height: 45px;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #ffffff;
+        color:black;
+        position: fixed;
+        top: 80px;
+        right: 0;
+        height: 100vh;
+        width: 100%;
+        border-top: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        gap: 5px;
+    }
+
+ 
     .menu a {
-      padding: 0 15px;
+        padding: 10px;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        display: block;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu a:hover {
+        background-color: #f2f2f2;
     }
 
     .hamburger {
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: block;
+    }
+
+    .hamburger.hidden {
       display: none;
     }
-  }
+    
+    
+    .close{
+      align-self: flex-end;
+        width: 20px;
+        height: 20px;
+        margin: 10px;
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        font-size: 2rem;
+    }
+    .menu.active {
+        display: flex;
+    }
+
+    /* Hero Section */
+
+    section{
+        padding: 10px 30px; 
+    }
+
+    .Hero{
+        margin-bottom: 30px;
+    }
+    
+    img {
+        display: block;
+       width: 100%;
+        height: auto;
+        margin: 0;
+        margin-bottom: 20px;
+      }
+      
+      .links{
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding: 10px ;
+        margin-bottom: 30px;
+      }
+
+      .links a{
+        text-decoration: none;
+        background-color: #ddd;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: black;
+      }
+
+      .links a:nth-child(2){
+        background-color: black;
+        color: white;
+      }
+
+      .filter {
+        position: relative;
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #ffffff;
+        cursor: pointer;
+      }
+      
+      .filter p {
+        padding: 10px;
+        margin: 0;
+        font-size: 16px;
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .filter p:last-child {
+        border-bottom: none;
+      }
+      
+      .filter p.selected {
+        background-color: #e0e0e0;
+      }
+      
+      .filter p.selected::after {
+        content: '▼';
+        font-size: 12px;
+        color: #666;
+        margin-left: 10px;
+      }
+      
+      .filter .selected ~ p {
+        display: none;
+      }
+      
+      .filter.active p {
+        display: block;
+      }
+      
+      .filter.active p.selected::after {
+        content: '▲';
+      }
+      
+      .project-nth {
+        padding: 20px 20px;
+        margin: 30px 0;
+        border: 1px solid;
+      }
+      
+      .project-nth img {
+        width: 100px;
+        height: 100px;
+        border: solid rgba(0, 0, 0, 0.1);
+      }
+      
+      footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      
+      .Images img {
+        width: 30px;
+      }
+      
+      .Socials {
+        display: flex;
+        gap: 10px;
+      }
+      
+      .Socials img {
+        width: 20px;
+        height: 20px;
+      }
+      
+      .non-flex-container {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+      }
+      
+      .non-flex-container .about h1 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+      
+      .non-flex-container .about ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .non-flex-container .about ul li {
+        margin-bottom: 5px;
+      }
+      
+
+
+    @media (min-width: 768px) {
+        .menu {
+        color:black;             
+        display: flex;
+        position: static;
+        flex-direction: row;
+        height: auto;
+        padding: 20px 0;
+        background-color: transparent;
+        box-shadow: none;
+        justify-content: center;
+        margin:0 auto;
+        gap: 60px;
+        }
+
+        .menu a {
+        border-radius: 10px;
+        }
+
+        
+    .menu a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        display: block;
+    }
+
+      .close{
+        display: none;
+      }
+        .hamburger {
+        display: none;
+        }
+    }
